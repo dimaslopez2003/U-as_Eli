@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 
 const Footer: React.FC = () => {
   return (
-    <Box component="footer" sx={{ py: 3, backgroundColor: '#333', color: 'white', mt: 5 }}>
+    <Box component="footer" sx={{ py: 3, backgroundColor: '#F25CAF', color: 'white', mt: 5 }}>
       <Container maxWidth="lg">
         <Typography variant="body2" align="center">
           © {new Date().getFullYear()} Elizabeth Martinez 2024.

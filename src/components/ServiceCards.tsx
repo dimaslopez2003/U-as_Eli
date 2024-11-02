@@ -1,14 +1,13 @@
-// src/components/ServiceCards.tsx
 import React from 'react';
 import { Box, Grid, Card, CardContent, Typography, Button } from '@mui/material';
-import iconos from '../data/IconsDetails'; // Importa el archivo de íconos personalizados // Icono para Nail Art
+import iconos from '../data/IconsDetails'; // Importa el archivo de íconos personalizados
 import SpaIcon from '@mui/icons-material/Spa'; // Icono para Add-Ons
 
 const services = [
   {
     title: 'Arte de las uñas',
     description: 'Ligula risus auctor tempus and dolor vitae undo purus semper sodales',
-    icon: <img src={iconos[0].url} alt={iconos[0].alt} style={{ width: 50, height: 50 }} />, // Usa el ícono personalizado
+    icon: <img src={iconos[0].url} alt={iconos[0].alt} style={{ width: 50, height: 50 }} />,
   },
   {
     title: 'Cuidado de los pies',
@@ -24,7 +23,7 @@ const services = [
 
 const ServiceCards: React.FC = () => {
   return (
-    <Box sx={{ flexGrow: 1, py: 4 }}>
+    <Box sx={{ flexGrow: 1, py: 4, px: { xs: 2, sm: 4, md: 6 } }}> {/* Agrega margen lateral */}
       <Grid container spacing={3} justifyContent="center">
         {services.map((service, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>

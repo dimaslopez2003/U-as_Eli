@@ -34,7 +34,10 @@ const ImageSlider: React.FC = () => {
     ],
   };
 
+
+
   return (
+
     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
       <Box sx={{ width: '100%', maxWidth: '800px', overflow: 'hidden' }}>
         <Slider {...settings}>

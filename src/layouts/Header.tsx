@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import logos from '../data/Logo';
 
 const Header: React.FC = () => {
   const theme = useTheme();
@@ -27,64 +28,121 @@ const Header: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const menuItems = ["About", "Pages", "Menu", "Gallery", "Booking", "Blog", "Contacts"];
+  const leftMenuItems = ["About", "Menu"];
+  const rightMenuItems = ["Gallery", "Contact"];
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <AppBar 
+      position="fixed" // Mantiene el header fijo en la parte superior
+      sx={{ 
+        backgroundColor: '#F25CAF', 
+        boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)', 
+        padding: '10px 0' 
+      }} 
+      elevation={3}
+    >
       <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Box display="flex" alignItems="center">
-            <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
-              LA NOTTÉ
-            </Typography>
-            <Typography variant="subtitle1" sx={{ ml: 1 }}>
-              NAIL STUDIO
-            </Typography>
-          </Box>
-
+        <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           {isMobile ? (
-            // Menú hamburguesa para dispositivos móviles
             <>
-              <IconButton
-                edge="end"
-                color="inherit"
-                aria-label="menu"
-                onClick={handleOpenMenu}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleCloseMenu}
-              >
-                {menuItems.map((item) => (
-                  <MenuItem key={item} onClick={handleCloseMenu}>
-                    {item}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </>
-          ) : (
-            // Menú completo para escritorio con animación en hover
-            <Box>
-              {menuItems.map((item, index) => (
-                <Button
-                  key={index}
+              <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                <IconButton
+                  edge="start"
                   color="inherit"
+                  aria-label="menu"
+                  onClick={handleOpenMenu}
+                  sx={{ fontSize: '2rem', mr: 2 }} // Aumenta el tamaño del ícono del menú
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleCloseMenu}
                   sx={{
-                    mx: 1,
-                    transition: 'color 0.3s ease, transform 0.3s ease',
-                    '&:hover': {
-                      color: '#e91e63',
-                      transform: 'scale(1.1)',
+                    '& .MuiPaper-root': {
+                      width: '100%',
+                      maxWidth: '300px',
                     },
                   }}
                 >
-                  {item}
-                </Button>
-              ))}
-            </Box>
+                  {[...leftMenuItems, ...rightMenuItems].map((item) => (
+                    <MenuItem key={item} onClick={handleCloseMenu}>
+                      {item}
+                    </MenuItem>
+                  ))}
+                </Menu>
+
+                {/* Centra el logo en la versión móvil */}
+                <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+                  <img
+                    src={logos[1].url}
+                    alt="Logo 2"
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      objectFit: 'contain', // Mejora la claridad de la imagen
+                    }}
+                  />
+                </Box>
+              </Box>
+            </>
+          ) : (
+            <>
+              <Box display="flex" alignItems="center">
+                {leftMenuItems.map((item, index) => (
+                  <Button
+                    key={index}
+                    color="inherit"
+                    sx={{
+                      mx: 1,
+                      transition: 'color 0.3s ease, transform 0.3s ease',
+                      '&:hover': {
+                        color: '#e91e63',
+                        transform: 'scale(1.1)',
+                      },
+                    }}
+                  >
+                    {item}
+                  </Button>
+                ))}
+              </Box>
+
+              <Box display="flex" alignItems="center">
+                <img
+                  src={logos[1].url}
+                  alt="Logo 2"
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    objectFit: 'contain', // Asegura claridad de la imagen
+                    marginRight: '10px',
+                  }}
+                />
+                <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+                  Elyzabethnails
+                </Typography>
+              </Box>
+
+              <Box display="flex" alignItems="center">
+                {rightMenuItems.map((item, index) => (
+                  <Button
+                    key={index}
+                    color="inherit"
+                    sx={{
+                      mx: 1,
+                      transition: 'color 0.3s ease, transform 0.3s ease',
+                      '&:hover': {
+                        color: '#e91e63',
+                        transform: 'scale(1.1)',
+                      },
+                    }}
+                  >
+                    {item}
+                  </Button>
+                ))}
+              </Box>
+            </>
           )}
         </Toolbar>
       </Container>
