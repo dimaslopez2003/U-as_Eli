@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/U-as_Eli/static/css/main.bd722d24.css",
+    "main.js": "/U-as_Eli/static/js/main.57343c2f.js",
+    "static/js/453.5cd49fbf.chunk.js": "/U-as_Eli/static/js/453.5cd49fbf.chunk.js",
+    "static/media/uña.jpg": "/U-as_Eli/static/media/uña.19b78e8749c24a91a6d9.jpg",
+    "static/media/unias_rojas.jpg": "/U-as_Eli/static/media/unias_rojas.e42115f6c0744be1a9a0.jpg",
+    "static/media/punta_blanca.jpg": "/U-as_Eli/static/media/punta_blanca.88eb2d0ad2835f113c55.jpg",
+    "static/media/vianney.jpg": "/U-as_Eli/static/media/vianney.1f5f7113fa2db1176563.jpg",
+    "static/media/rojo_brillante.jpg": "/U-as_Eli/static/media/rojo_brillante.81c463d50c037e4f1471.jpg",
+    "static/media/logo_no_fondo.png": "/U-as_Eli/static/media/logo_no_fondo.9991d745b0458477fe90.png",
+    "static/media/logo.png": "/U-as_Eli/static/media/logo.ac06bb9b3c1972094987.png",
+    "static/media/punta_negra.jpg": "/U-as_Eli/static/media/punta_negra.fe9a7b0be88f5b4d4e71.jpg",
+    "static/media/dibujo_blanco.jpg": "/U-as_Eli/static/media/dibujo_blanco.41e2e864711cd7d34bf9.jpg",
+    "static/media/punta_rosa.jpg": "/U-as_Eli/static/media/punta_rosa.0062e554f46b0a0083f6.jpg",
+    "static/media/rojo_flores.jpg": "/U-as_Eli/static/media/rojo_flores.10ebb9e5bcda76dddc46.jpg",
+    "static/media/extravagante.jpg": "/U-as_Eli/static/media/extravagante.aafd651adf7ae269c316.jpg",
+    "static/media/punta_roja.jpg": "/U-as_Eli/static/media/punta_roja.63ae6415c07cdd9ef16e.jpg",
+    "static/media/manos.jpg": "/U-as_Eli/static/media/manos.bab932dcb3eb95867392.jpg",
+    "static/media/pies.png": "/U-as_Eli/static/media/pies.b93e09e07bfccf5f2b40.png",
+    "static/media/detalle.png": "/U-as_Eli/static/media/detalle.40ee0a57e357e2894c17.png",
+    "static/media/slick.svg": "/U-as_Eli/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/U-as_Eli/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/U-as_Eli/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/U-as_Eli/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/U-as_Eli/index.html",
+    "main.bd722d24.css.map": "/U-as_Eli/static/css/main.bd722d24.css.map",
+    "main.57343c2f.js.map": "/U-as_Eli/static/js/main.57343c2f.js.map",
+    "453.5cd49fbf.chunk.js.map": "/U-as_Eli/static/js/453.5cd49fbf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd722d24.css",
+    "static/js/main.57343c2f.js"
+  ]
+}
