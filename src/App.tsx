@@ -12,6 +12,7 @@ import ServiceList from './components/ServiceList';
 import RevealYourStyleLeft from './components/RevealYourStyleLeft';
 import TestimonialSlider from './components/TestimonialSlider';
 import PhotoGallery from './components/PhotoGallery';
+import WorkingHours from './components/WorkingHours';
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
           <RevealYourStyle />
         </Box>
 
-        <Box mb={6}>
+        {/* Agregamos el id="menu-section" para hacer scroll a esta sección */}
+        <Box mb={6} id="menu-section">
           <ServiceList />
         </Box>
 
@@ -53,12 +55,13 @@ function App() {
         </Box>
 
         <Box mb={6}>
-          <h2>Contenido principal</h2>
-          <p>Descripción o contenido de ejemplo.</p>
+          <WorkingHours />
         </Box>
       </Container>
 
-      <Footer />
+      <Box id="contact-section">
+        <Footer />
+      </Box>
     </div>
   );
 }

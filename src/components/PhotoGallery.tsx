@@ -1,13 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Grid, Box, Typography } from '@mui/material';
 import designs from '../data/Images_Services'; // Importa el arreglo con las imágenes
 
 const PhotoGallery: React.FC = () => {
   const [flipped, setFlipped] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleFlip = (index: number) => {
     setFlipped(flipped === index ? null : index);
   };
+
+  // Memorizar el diseño para evitar recalcular el diseño de la galería en cada renderizado
+  const memoizedDesigns = useMemo(() => designs, []);
+
+  // Cargar imágenes cuando se vuelven visibles
+  useEffect(() => {
+    const handleScroll = () => {
+      memoizedDesigns.forEach((design, index) => {
+        const imageElement = document.getElementById(`image-${index}`);
+        if (
+          imageElement &&
+          !loadedImages.includes(design.url) &&
+          imageElement.getBoundingClientRect().top < window.innerHeight
+        ) {
+          setLoadedImages((prev) => [...prev, design.url]);
+        }
+      });
+    };
+
+    // Escuchar eventos de desplazamiento
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [loadedImages, memoizedDesigns]);
 
   return (
     <Box sx={{ padding: '20px' }}>
@@ -15,13 +42,13 @@ const PhotoGallery: React.FC = () => {
         Galería de fotos
       </Typography>
       <Grid container spacing={2} justifyContent="center">
-        {designs.map((design, index) => (
+        {memoizedDesigns.map((design, index) => (
           <Grid item xs={6} sm={6} md={4} key={index}>
             <Box
               onClick={() => handleFlip(index)}
               sx={{
                 width: '100%',
-                height: '300px', // Fija la altura para evitar superposición
+                height: '300px',
                 perspective: '1000px',
                 cursor: 'pointer',
               }}
@@ -39,8 +66,9 @@ const PhotoGallery: React.FC = () => {
                 {/* Frente - Imagen */}
                 <Box
                   component="img"
-                  src={design.url}
+                  src={loadedImages.includes(design.url) ? design.url : undefined}
                   alt={design.alt}
+                  id={`image-${index}`}
                   sx={{
                     width: '100%',
                     height: '100%',

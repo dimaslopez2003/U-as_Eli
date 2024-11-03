@@ -50,7 +50,7 @@ const ServiceList: React.FC = () => {
             <Card elevation={3}>
               <CardContent>
                 <Typography variant="h6" component="div" sx={{ fontWeight: 'bold', mb: 2, textAlign: 'center' }}>
-                  Uñas y Cócteles
+                  Uñas
                 </Typography>
                 <List>
                   {servicesLeft.map((service, index) => (
@@ -71,7 +71,7 @@ const ServiceList: React.FC = () => {
             <Card elevation={3}>
               <CardContent>
                 <Typography variant="h6" component="div" sx={{ fontWeight: 'bold', mb: 2, textAlign: 'center' }}>
-                  Paquetes de Pintura
+                  Paquetes
                 </Typography>
                 <List>
                   {servicesRight.map((service, index) => (
